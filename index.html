@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<base href="/">-->
+    <title>PropertyCross</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body ng-app="PropertyCross">
+
+<div>
+    <div ui-view></div>
+</div>
+<div ng-show="overlay" id="overlay">
+    <div class="parent-image"><img src="img/loading.gif"></div>
+</div>
+
+<!-- scripts -->
+<script src="js/lib/angular.js"></script>
+<script src="js/lib/angular-ui-router.js"></script>
+<script src="js/lib/angular-messages.js"></script>
+
+
+<script src="./app.js"></script>
+
+<!--<script src="./js/app/app.module.js"></script>-->
+<!--<script src="./js/app/services.js"></script>-->
+<!--<script src="./js/app/controllers.js"></script>-->
+
+<!-- end scripts -->
+</body>
+</html>

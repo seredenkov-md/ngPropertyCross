@@ -1,0 +1,19 @@
+<a ui-sref="search">
+    <button>&lt Back</button>
+</a>
+
+<span ng-if="data.listings">
+    <div>
+        <b>{{data.listings.length}} of {{ data.totalResults }} matches</b>
+    </div>
+    <div>
+        <a ng-repeat="item in data.listings" href="#/property/{{item.guid}}">
+            <img ng-src="{{item.thumb_url}}" />
+            <p>{{item.title}}</p>
+            <div>{{item.price_formatted}}</div>
+            <div>{{item.summary}}</div>
+            <hr>
+        </a>
+        <hr>
+    </div>
+</span>

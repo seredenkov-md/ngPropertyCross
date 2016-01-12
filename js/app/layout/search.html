@@ -1,0 +1,52 @@
+<h1>PropertyCross</h1>
+<div>
+    <span> “Use the form below to search for houses to buy.
+        You can search by place-name, postcode, or click 'My location',
+        to search in your current location!”
+    </span>
+</div>
+<form name="searchForm"
+      ng-submit="search()"
+      novalidate>
+    <div>
+        <input autofocus
+               type="text"
+               required
+               ng-minlength="3"
+               ng-maxlength="32"
+               ng-pattern="/^[0-9a-z]+$/"
+               name="searchText"
+               ng-model="searchText"
+               ng-change="error = '' "
+               placeholder="input place">
+    </div>
+    <div>
+        <button gn-click="search()" ng-disabled="searchForm.$invalid">Search</button>
+    </div>
+</form>
+
+<div id="state-area">
+    <div id="error-area">
+        <!-- область для вывода сообщений об ошибках-->
+        <div ng-messages="searchForm.searchText.$error"
+             ng-messages-multiple
+             ng-if="searchForm.searchText.$dirty"
+             role="alert">
+            <div ng-message="required">
+                You did not enter a field
+            </div>
+            <div ng-message="minlength">
+                Your field is too short
+            </div>
+            <div ng-message="maxlength">
+                Your field is too long
+            </div>
+            <div ng-message="pattern">
+                Only lowercase letters (a-z) and numbers are allowed
+            </div>
+        </div>
+        <div ng-if="error">
+            {{ error }}
+        </div>
+    </div>
+</div>

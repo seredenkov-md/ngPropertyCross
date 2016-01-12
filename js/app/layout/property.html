@@ -1,0 +1,16 @@
+<div>
+    <a ui-sref="results">
+        <button>&lt Back</button>
+    </a>
+</div>
+
+<div ng-if="property">
+    <b>{{property.title}}</b>
+    <img class="big-image" ng-src="{{property.img_url}}" />
+    <p>
+        <b>{{property.price_formatted}}</b>
+    </p>
+    <p ng-if="property.bathroom_number"> {{property.bathroom_number}} bed </p>
+    <p ng-if="property.bedroom_number"> {{property.bedroom_number}} bathrooms</p>
+    <p>{{property.summary}}</p>
+</div>
